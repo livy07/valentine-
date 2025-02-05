@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Be My Valentine?</title>
+    <style>
+        body {
+            text-align: center;
+            background-color: #ffe6f2;
+            font-family: 'Arial', sans-serif;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        h1 {
+            color: #ff4d79;
+            font-size: 2.5em;
+        }
+        .heart {
+            font-size: 100px;
+            color: red;
+            animation: heartbeat 1s infinite;
+        }
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+        button {
+            font-size: 18px;
+            padding: 10px 20px;
+            margin: 10px;
+            border: none;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .yes {
+            background-color: #ff4d79;
+            color: white;
+            border-radius: 10px;
+        }
+        .no {
+            background-color: #cccccc;
+            color: black;
+            border-radius: 10px;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Will you be my Valentine? ❤️</h1>
+        <div class="heart">💖</div>
+        <button class="yes" onclick="yesClicked()">Yes!</button>
+        <button class="no" id="noButton" onmouseover="moveButton()">No...</button>
+    </div>
+
+    <script>
+        function yesClicked() {
+            alert("Yay! I love you! 💕");
+            document.body.innerHTML = "<h1 style='color:#ff4d79;'>Yay! You're my Valentine! 💖</h1><p style='font-size:20px;'>Love you! 😘</p>";
+        }
+
+        function moveButton() {
+            let button = document.getElementById("noButton");
+            let x = Math.random() * window.innerWidth * 0.8;
+            let y = Math.random() * window.innerHeight * 0.8;
+            button.style.left = x + "px";
+            button.style.top = y + "px";
+        }
+    </script>
+
+</body>
+</html>
